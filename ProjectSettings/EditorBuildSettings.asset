@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/AraSahne.unity
+    guid: 1050a042f81f5ac4fb23abadfcbf24d7
+  - enabled: 1
     path: Assets/Scenes/Hell.unity
     guid: 5cd29f429eb880e47a26a00f5f6f712b
   m_configObjects: {}

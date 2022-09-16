@@ -18,7 +18,8 @@ public class Dialogue : MonoBehaviour
     {
         i = index;
         startText.text = string.Empty;
-        StartDialogue();
+        //StartDialogue();
+        Invoke(nameof(StartDialogue),1);
     }
 
     // Update is called once per frame
@@ -42,10 +43,10 @@ public class Dialogue : MonoBehaviour
         //{
         //    dialogueCheck = true;
         //}
-        if (dialogueCheck)
-        {
-            gameObject.SetActive(false);
-        }
+        //if (dialogueCheck)
+        //{
+        //    gameObject.SetActive(false);
+        //}
     }
     void StartDialogue()
     {
@@ -55,6 +56,7 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        
         foreach (char c in lines[index].ToCharArray())
         {
             startText.text += c;
@@ -74,6 +76,7 @@ public class Dialogue : MonoBehaviour
         {
             gameObject.SetActive(false);
             dialogueCheck = true;
+            gameObject.SetActive(false);
         }
     }
 }
