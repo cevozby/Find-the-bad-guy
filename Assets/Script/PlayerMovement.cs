@@ -7,14 +7,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed;
     float horizontalDir, verticalDir;
 
+    bool isMovement;
+
     Rigidbody2D playerRB;
     Animator playerAnim;
+    SpriteRenderer playerSR;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
+        playerSR = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -31,19 +35,34 @@ public class PlayerMovement : MonoBehaviour
         if(horizontalDir != 0)
         {
             playerRB.velocity = new Vector2(horizontalDir * speed, 0);
+            playerAnim.SetBool("IsMovement", true);
+            playerAnim.SetFloat("Horizontal", horizontalDir);
+            playerAnim.SetFloat("Vertical", verticalDir);
+            if (horizontalDir < 0)
+            {
+                playerSR.flipX = true;
+            }
+            else
+            {
+                playerSR.flipX = false;
+            }
         }
-        if(verticalDir != 0)
+        else if(verticalDir != 0)
         {
             playerRB.velocity = new Vector2(0f, verticalDir * speed);
+            playerAnim.SetBool("IsMovement", true);
+            playerAnim.SetFloat("Horizontal", horizontalDir);
+            playerAnim.SetFloat("Vertical", verticalDir);
         }
-        if(horizontalDir != 0 && verticalDir != 0)
+        /*if(horizontalDir != 0 && verticalDir != 0)
         {
             playerRB.velocity = new Vector2(horizontalDir, verticalDir).normalized * speed;
             Debug.Log(new Vector2(horizontalDir, verticalDir).normalized);
-        }
+        }*/
         if(horizontalDir == 0 && verticalDir == 0)
         {
             playerRB.velocity = Vector2.zero;
+            playerAnim.SetBool("IsMovement", false);
         }
     }
 
