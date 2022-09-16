@@ -24,6 +24,7 @@ public class GhostTiming : MonoBehaviour,IPointerClickHandler
         {
             gameObject.SetActive(false);
         }
+        //Eger tek tek hasar veriyor isek
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

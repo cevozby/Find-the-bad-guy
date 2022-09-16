@@ -10,6 +10,7 @@ public class CharacterAttackControl : MonoBehaviour
 
     }
 
+    //eðer belirli bir alandaki tüm ruhlara vuruyor isek 
     // Update is called once per frame
     //void Update()
     //{
