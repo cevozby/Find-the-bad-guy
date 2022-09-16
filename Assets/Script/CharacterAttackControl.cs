@@ -12,15 +12,18 @@ public class CharacterAttackControl : MonoBehaviour
 
     //eðer belirli bir alandaki tüm ruhlara vuruyor isek 
     // Update is called once per frame
-    //void Update()
-    //{
-    //    if (Input.GetMouseButtonDown(0))
-    //    {
-    //        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, 1f, layermask, 0f, 0);
-    //        for (int i = 0; i < enemies.Length; i++)
-    //        {
-    //            enemies[i].GetComponent<GhostTiming>().GetDamage();
-    //        }
-    //    }
-    //}
+    void Update()
+    {
+        if (!PlayerMovement.gameOver)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Collider[] enemies = Physics.OverlapSphere(transform.position, 1f, layermask);
+                for (int i = 0; i < enemies.Length; i++)
+                {
+                    enemies[i].GetComponent<GhostTiming>().GetDamage();
+                }
+            }
+        }
+    }
 }

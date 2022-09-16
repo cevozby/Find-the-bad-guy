@@ -4,32 +4,24 @@ using UnityEngine;
 
 public class Points : MonoBehaviour
 {
-    public int points;
-    public int maxPoints;
+    public static int souls;
+    public static int escapeSouls;
+    public static int maxSouls;
 
-    #region Singleton
-    public static Points instance;
-
-    private void Awake()
-    {
-        if (instance != null)
-        {
-            return;
-        }
-        instance = this;
-    }
-    #endregion
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetFloat("Points", points);
+        souls = 0;
+        escapeSouls = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        PlayerPrefs.SetInt("Points", points);
-        maxPoints = PlayerPrefs.GetInt("Points");
+        PlayerPrefs.SetInt("Souls", souls);
+        
+        //maxSouls = PlayerPrefs.GetInt("Souls");
     }
 }

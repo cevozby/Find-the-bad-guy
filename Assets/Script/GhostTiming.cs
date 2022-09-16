@@ -18,14 +18,17 @@ public class GhostTiming : MonoBehaviour,IPointerClickHandler
     // Update is called once per frame
     void Update()
     {
-        alpha += Time.deltaTime * 0.1f;
+        alpha += Time.deltaTime * 0.05f;
         _material.color = new Color(1,1,1, alpha);
         if(alpha >= 1)
         {
+            //alpha = 1;
             gameObject.SetActive(false);
+            Points.escapeSouls++;
+            Points.souls--;
         }
         //Eger tek tek hasar veriyor isek
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray,out RaycastHit hit,Mathf.Infinity))
@@ -36,7 +39,7 @@ public class GhostTiming : MonoBehaviour,IPointerClickHandler
                     Debug.Log("hulooog");
                 }
             }
-        }
+        }*/
     }
     public void GetDamage()
     {

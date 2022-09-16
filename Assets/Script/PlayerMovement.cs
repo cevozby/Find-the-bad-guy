@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontalDir, verticalDir;
 
     bool isMovement;
+    public static bool gameOver;
 
     Rigidbody2D playerRB;
     Animator playerAnim;
@@ -19,12 +20,17 @@ public class PlayerMovement : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
         playerSR = GetComponent<SpriteRenderer>();
+        gameOver = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        CharacterMove();
+        if (!gameOver)
+        {
+            CharacterMove();
+        }
+        
     }
 
     void CharacterMove()
