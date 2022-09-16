@@ -25,6 +25,21 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void RestartButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void PauseButton()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void ResumeButton()
+    {
+        Time.timeScale = 1;
+    }
+
     public void SetVolume(float volume)
     {
         Debug.Log(volume);
