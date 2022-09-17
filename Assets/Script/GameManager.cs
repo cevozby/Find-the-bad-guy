@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] float kapanisLerp =1;
 
+    [SerializeField] int maxEscapeValue;
+
     bool isOver;
     // Start is called before the first frame update
     private void Awake()
@@ -64,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        if(Points.escapeSouls >= 3)
+        if(Points.escapeSouls >= maxEscapeValue)
         {
             gameOverEvent?.Invoke();
             isOver = true;
