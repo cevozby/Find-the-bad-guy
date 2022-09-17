@@ -27,7 +27,12 @@ public class ButtonManager : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Hell");
+    }
+
+    public void HomeButton()
+    {
+        SceneManager.LoadScene("StartScene");
     }
 
     public void PauseButton()
