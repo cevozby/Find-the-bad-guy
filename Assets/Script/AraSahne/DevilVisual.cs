@@ -16,6 +16,7 @@ public class DevilVisual : MonoBehaviour
     float kapanisLerp;
     bool controller;
     Color kapanisColor;
+    public int nextSceneIndex;
     void Start()
     {
         firrstSize = Vector3.zero;
@@ -23,6 +24,7 @@ public class DevilVisual : MonoBehaviour
         lastSize = Vector3.one * 7;
         lerpValue = 0;
         kapanisColor = kapanis.color;
+        Dialogue.dialogueCheck = false;
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class DevilVisual : MonoBehaviour
             kapanis.color = new Color(kapanisColor.r, kapanisColor.g, kapanisColor.b, kapanisLerp);
             if(kapanisLerp > 1)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene(nextSceneIndex);
             }
         }
             

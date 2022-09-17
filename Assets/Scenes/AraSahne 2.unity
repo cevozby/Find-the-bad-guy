@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 649146446}
   - component: {fileID: 649146448}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Devil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
       m_Calls: []
   dialoguePanel: {fileID: 6204132147570563625}
   kapanis: {fileID: 1854985377}
-  nextSceneIndex: 2
+  nextSceneIndex: 0
 --- !u!1 &1317532156
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.18867922, g: 0, b: 0.011062261, a: 0}
+  m_BackGroundColor: {r: 0.1882353, g: 0, b: 0.011764706, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

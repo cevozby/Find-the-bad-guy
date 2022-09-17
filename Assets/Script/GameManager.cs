@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
@@ -14,7 +15,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] Image kapanis;
     Color kapanisColor;
-    float kapanisLerp =1;
+    [Range(0f, 1f)]
+    [SerializeField] float kapanisLerp =1;
+
+    bool isOver;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +29,17 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // baslangictaki acilis
-        kapanisLerp -= Time.deltaTime *0.5f;
+        kapanisLerp = Mathf.Clamp(kapanisLerp,-0.01f, 1.01f);
+        if(isOver)
+        {
+            kapanisLerp += Time.deltaTime * 0.5f;
+            if(kapanisLerp > 1)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
+        else
+            kapanisLerp -= Time.deltaTime *0.5f;
         kapanis.color = new Color(kapanisColor.r, kapanisColor.g, kapanisColor.b, kapanisLerp);
 
 
@@ -47,6 +61,7 @@ public class GameManager : MonoBehaviour
         if(Points.escapeSouls >= 3)
         {
             gameOverEvent?.Invoke();
+            isOver = true;
         }
     }
 }
