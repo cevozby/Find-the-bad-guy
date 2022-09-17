@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Hell.unity
     guid: 5cd29f429eb880e47a26a00f5f6f712b
   - enabled: 1
-    path: Assets/Scenes/AraSahne 2.unity
+    path: Assets/Scenes/GameOver.unity
     guid: 3c473a9d1df978142a4e9ceab0b54acc
   m_configObjects: {}
