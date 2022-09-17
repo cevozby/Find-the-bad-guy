@@ -26,7 +26,9 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        isOver = false;
         kapanisColor = kapanis.color;
+        kapanisLerp = 1;
     }
 
     // Update is called once per frame
@@ -66,6 +68,7 @@ public class GameManager : MonoBehaviour
         {
             gameOverEvent?.Invoke();
             isOver = true;
+            Points.escapeSouls = 0;
         }
     }
 }

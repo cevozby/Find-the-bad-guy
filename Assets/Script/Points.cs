@@ -11,7 +11,7 @@ public class Points : MonoBehaviour
     
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         souls = 0;
         escapeSouls = 0;
