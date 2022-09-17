@@ -12,6 +12,7 @@ public class Dialogue : MonoBehaviour
     int index, i;
 
     public static bool dialogueCheck = false;
+    bool canClick;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canClick)
         {
             if (startText.text == lines[index])
             {
@@ -53,6 +54,7 @@ public class Dialogue : MonoBehaviour
     {
         index = 0;
         StartCoroutine(TypeLine());
+        canClick = true;
     }
 
     IEnumerator TypeLine()

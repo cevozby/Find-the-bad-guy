@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UtilTests;
 
 public class GhostTiming : MonoBehaviour,IPointerClickHandler
 {
     Material _material;
     float alpha;
     Transform player;
+    
+    Flying fly;
+    AudioSource audio;
     void Start()
     {
+        audio = GetComponent<AudioSource>();    
+        fly = GetComponent<Flying>();
         _material = GetComponent<SpriteRenderer>().material;
         alpha = _material.color.a;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
     }
 
     // Update is called once per frame
@@ -22,8 +29,10 @@ public class GhostTiming : MonoBehaviour,IPointerClickHandler
         _material.color = new Color(1,1,1, alpha);
         if(alpha >= 1)
         {
-            //alpha = 1;
-            gameObject.SetActive(false);
+            fly.enabled = true;
+            
+          //  gameObject.SetActive(false);
+            
             Points.escapeSouls++;
             Points.souls--;
         }
@@ -44,6 +53,9 @@ public class GhostTiming : MonoBehaviour,IPointerClickHandler
     public void GetDamage()
     {
         alpha -= 0.2f;
+        //  AudioEffectController.Instance.wilhelm.Play();
+        audio.Play();
+      
     }
     public void OnPointerClick(PointerEventData eventData)
     {
