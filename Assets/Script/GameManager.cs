@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
 
     bool isOver;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        Dialogue.dialogueCheck = false;
+    }
     void Start()
     {
         kapanisColor = kapanis.color;
