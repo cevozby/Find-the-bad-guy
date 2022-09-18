@@ -9,13 +9,16 @@ public class DevilVisual : MonoBehaviour
     [SerializeField] GameObject buttonsObject;
     public int nextSceneIndex;
 
-
+    Vector3 firstPos, lastpos;
     void Start()
     {
+        lastSize = transform.localScale;
         firrstSize = Vector3.zero;
         transform.localScale = firrstSize;
-        lastSize = Vector3.one * 7;
+        
         lerpValue = 0;
+        lastpos = new Vector2(0, -108);
+        firstPos = transform.localPosition;
         
     }
 
@@ -29,6 +32,10 @@ public class DevilVisual : MonoBehaviour
         if (lerpValue >= 1)
         {
             buttonsObject.SetActive(true);
+        }
+        if(transform.localPosition != lastpos)
+        {
+            transform.localPosition = Vector3.Lerp(firstPos, lastpos, lerpValue);
         }
     }
 }

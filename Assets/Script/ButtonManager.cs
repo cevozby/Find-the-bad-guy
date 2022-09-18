@@ -9,10 +9,14 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] Slider audioSlider;
 
     // Start is called before the first frame update
+    
     void Start()
     {
-        audioMixer.SetFloat("Volume", PlayerPrefs.GetFloat("AudioVolume"));
-        audioSlider.value = PlayerPrefs.GetFloat("AudioVolume");
+        if(PlayerPrefs.HasKey("AudioVolume"))
+            audioSlider.value = PlayerPrefs.GetFloat("AudioVolume");
+        audioMixer.SetFloat("Volume", audioSlider.value);
+        
+        
     }
 
 
@@ -37,6 +41,8 @@ public class ButtonManager : MonoBehaviour
     public void RestartButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Points.souls = 0;
+        Points.escapeSouls = 0;
     }
 
     public void HomeButton()
