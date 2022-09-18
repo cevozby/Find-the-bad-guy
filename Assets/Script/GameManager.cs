@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
         isOver = false;
         kapanisColor = kapanis.color;
         //kapanisLerp = 1;
+        Points.souls = 0;
+        maxEscapeValue = 5;
     }
 
     // Update is called once per frame
