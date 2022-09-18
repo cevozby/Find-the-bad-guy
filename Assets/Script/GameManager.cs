@@ -17,24 +17,27 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] int maxEscapeValue;
 
-    bool isOver;
+    [SerializeField] bool isOver;
     // Start is called before the first frame update
     private void Awake()
     {
         Dialogue.dialogueCheck = false;
+        Time.timeScale = 1f;
     }
-    void Start()
+    void OnEnable()
     {
         isOver = false;
         kapanisColor = kapanis.color;
-        kapanisLerp = 1;
+        //kapanisLerp = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        Debug.Log("aaa");
         // baslangictaki acilis
-        kapanisLerp = Mathf.Clamp(kapanisLerp,-0.01f, 1.01f);
+        
         if(isOver)
         {
             kapanisLerp += Time.deltaTime * 0.5f;
@@ -44,9 +47,11 @@ public class GameManager : MonoBehaviour
             }
         }
         else
-            kapanisLerp -= Time.deltaTime *0.5f;
-        kapanis.color = new Color(kapanisColor.r, kapanisColor.g, kapanisColor.b, kapanisLerp);
+            kapanisLerp -= Time.deltaTime * 0.5f;
+        kapanisLerp = Mathf.Clamp(kapanisLerp, -0.01f, 1.1f);
 
+        kapanis.color = new Color(kapanisColor.r, kapanisColor.g, kapanisColor.b, kapanisLerp);
+        
 
         soulsCount.text = Points.souls.ToString();
         GameOver();
@@ -62,11 +67,12 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        if(Points.escapeSouls >= maxEscapeValue)
+        if (Points.escapeSouls >= maxEscapeValue)
         {
             gameOverEvent?.Invoke();
             isOver = true;
             Points.escapeSouls = 0;
         }
+    
     }
 }

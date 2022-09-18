@@ -16,6 +16,7 @@ public class GhostTiming : MonoBehaviour,IPointerClickHandler
         _material = GetComponent<SpriteRenderer>().material;
         alpha = _material.color.a;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        
 
     }
 
