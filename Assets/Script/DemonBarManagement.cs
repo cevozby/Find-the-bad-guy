@@ -9,7 +9,7 @@ public class DemonBarManagement : MonoBehaviour
     void Start()
     {
         demonBar.minValue = 0;
-        demonBar.maxValue = 10;
+        demonBar.maxValue = GameManager.maxEscapeValue;
         demonBar.value = 0;
     }
 

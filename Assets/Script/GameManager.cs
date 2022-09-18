@@ -15,9 +15,11 @@ public class GameManager : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] float kapanisLerp =1;
 
-    [SerializeField] int maxEscapeValue;
+    public static int maxEscapeValue;
 
     [SerializeField] bool isOver;
+
+    public static string level;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -34,8 +36,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        Debug.Log("aaa");
         // baslangictaki acilis
         
         if(isOver)
@@ -75,4 +75,21 @@ public class GameManager : MonoBehaviour
         }
     
     }
+
+    void EscapeCalculate()
+    {
+        if(level == "Easy")
+        {
+            maxEscapeValue = 5;
+        }
+        else if (level == "Medium")
+        {
+            maxEscapeValue = 10;
+        }
+        else if (level == "Hard")
+        {
+            maxEscapeValue = 15;
+        }
+    }
+
 }

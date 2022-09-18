@@ -5,6 +5,6 @@ public class ScenePass : MonoBehaviour
 {
     public void GamePass()
     {
-        SceneManager.LoadScene("Hell");
+        SceneManager.LoadScene(GameManager.level);
     }
 }

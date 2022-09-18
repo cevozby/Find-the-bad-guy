@@ -26,6 +26,20 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void EasyLevel()
+    {
+        GameManager.level = "Easy";
+    }
+
+    public void MediumLevel()
+    {
+        GameManager.level = "Medium";
+    }
+
+    public void HardLevel()
+    {
+        GameManager.level = "Hard";
+    }
 
     public void RestartButton()
     {
