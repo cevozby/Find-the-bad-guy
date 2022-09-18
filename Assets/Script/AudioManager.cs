@@ -9,7 +9,8 @@ public class AudioManager : MonoBehaviour
     {
         gameObject.SetActive(true);
         GameObject[] audios = GameObject.FindGameObjectsWithTag("Audio");
-        if (audios.Length > 1) return;
+        if (audios.Length > 1)
+            Destroy(audios[1]);
         DontDestroyOnLoad(this);
     }
 

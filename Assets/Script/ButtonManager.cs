@@ -12,7 +12,7 @@ public class ButtonManager : MonoBehaviour
     void Start()
     {
         audioMixer.SetFloat("Volume", PlayerPrefs.GetFloat("AudioVolume"));
-        audioSlider.value = -40;
+        audioSlider.value = PlayerPrefs.GetFloat("AudioVolume");
     }
 
 

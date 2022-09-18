@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
             kapanisLerp += Time.deltaTime * 0.5f;
             if(kapanisLerp > 1)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene("GameOver");
             }
         }
         else
