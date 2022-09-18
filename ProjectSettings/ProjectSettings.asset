@@ -15,7 +15,7 @@ PlayerSettings:
   companyName: DefaultCompany
   productName: Hellhound
   defaultCursor: {fileID: 0}
-  cursorHotspot: {x: 118, y: 128}
+  cursorHotspot: {x: 46, y: 33}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1

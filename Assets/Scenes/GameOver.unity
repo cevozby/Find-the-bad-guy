@@ -582,8 +582,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1659811026}
-        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: HomeButton
+        m_TargetAssemblyTypeName: AnamenuButton, Assembly-CSharp
+        m_MethodName: AnaMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -714,6 +714,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1517533668
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1157063674773704313, guid: 66f97f8f69f362e4b8edc3c55e9ae990, type: 3}
+      propertyPath: m_Name
+      value: cursor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157063674773704315, guid: 66f97f8f69f362e4b8edc3c55e9ae990, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157063674773704315, guid: 66f97f8f69f362e4b8edc3c55e9ae990, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157063674773704315, guid: 66f97f8f69f362e4b8edc3c55e9ae990, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157063674773704315, guid: 66f97f8f69f362e4b8edc3c55e9ae990, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157063674773704315, guid: 66f97f8f69f362e4b8edc3c55e9ae990, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157063674773704315, guid: 66f97f8f69f362e4b8edc3c55e9ae990, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157063674773704315, guid: 66f97f8f69f362e4b8edc3c55e9ae990, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157063674773704315, guid: 66f97f8f69f362e4b8edc3c55e9ae990, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157063674773704315, guid: 66f97f8f69f362e4b8edc3c55e9ae990, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157063674773704315, guid: 66f97f8f69f362e4b8edc3c55e9ae990, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157063674773704315, guid: 66f97f8f69f362e4b8edc3c55e9ae990, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 66f97f8f69f362e4b8edc3c55e9ae990, type: 3}
 --- !u!1 &1659811021
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,11 +885,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1659811021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d343bdf7c46db04999708db6f7d5f5b, type: 3}
+  m_Script: {fileID: 11500000, guid: c24f41d87fbb77e48b4748f751d65aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 0}
-  audioSlider: {fileID: 0}
 --- !u!1 &1854985375
 GameObject:
   m_ObjectHideFlags: 0
