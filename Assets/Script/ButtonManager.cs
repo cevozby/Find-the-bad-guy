@@ -15,30 +15,23 @@ public class ButtonManager : MonoBehaviour
         audioSlider.value = -40;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void StartButton()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
 
     public void EasyLevel()
     {
         GameManager.level = "Easy";
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void MediumLevel()
     {
         GameManager.level = "Medium";
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void HardLevel()
     {
         GameManager.level = "Hard";
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void RestartButton()
