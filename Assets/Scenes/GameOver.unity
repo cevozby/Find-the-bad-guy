@@ -421,7 +421,6 @@ GameObject:
   - component: {fileID: 649146445}
   - component: {fileID: 649146447}
   - component: {fileID: 649146446}
-  - component: {fileID: 649146448}
   - component: {fileID: 649146449}
   m_Layer: 5
   m_Name: Devil
@@ -487,21 +486,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649146444}
   m_CullTransparentMesh: 1
---- !u!114 &649146448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 649146444}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 751db45e89c2dd147acf2e18cc992672, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 6204132147570563625}
-  kapanis: {fileID: 1854985377}
-  buttons: {fileID: 1974202818}
 --- !u!114 &649146449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,9 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe5b2b50f4bcb04b869f9c2b1a6716b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 0}
   buttonsObject: {fileID: 1974202818}
-  nextSceneIndex: 0
 --- !u!1 &696709346
 GameObject:
   m_ObjectHideFlags: 0

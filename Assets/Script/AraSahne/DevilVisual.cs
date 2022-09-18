@@ -5,9 +5,7 @@ public class DevilVisual : MonoBehaviour
     Vector3 lastSize;
     Vector3 firrstSize;
     float lerpValue;
-    [SerializeField] Transform dialoguePanel;
     [SerializeField] GameObject buttonsObject;
-    public int nextSceneIndex;
 
     Vector3 firstPos, lastpos;
     void Start()
