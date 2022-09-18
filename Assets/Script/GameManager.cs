@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,7 +7,6 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI soulsCount;
-    [SerializeField]  TextMeshProUGUI escapeSoulsCount;
 
     [SerializeField] UnityEvent gameOverEvent;
 
@@ -52,7 +49,6 @@ public class GameManager : MonoBehaviour
 
 
         soulsCount.text = Points.souls.ToString();
-        escapeSoulsCount.text = Points.escapeSouls.ToString();
         GameOver();
     }
 
