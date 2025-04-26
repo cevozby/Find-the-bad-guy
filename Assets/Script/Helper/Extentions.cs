@@ -24,7 +24,7 @@ public static class Extentions
         Vector3 displacementXZ = new Vector3(yon.x, 0, yon.z);
         Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * y);
         Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * y / gravity) + Mathf.Sqrt(2 * -y / gravity));
-        rb.velocity = velocityXZ + velocityY;
+        rb.linearVelocity = velocityXZ + velocityY;
     }
 
     public static Transform FindClosestTransform(this Transform transform, IEnumerable<Transform> transforms)

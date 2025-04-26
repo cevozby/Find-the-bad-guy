@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(horizontalDir != 0)
         {
-            playerRB.velocity = new Vector2(horizontalDir * speed, 0);
+            playerRB.linearVelocity = new Vector2(horizontalDir * speed, 0);
             playerAnim.SetBool("IsMovement", true);
             playerAnim.SetFloat("Horizontal", horizontalDir);
             playerAnim.SetFloat("Vertical", verticalDir);
@@ -52,14 +52,14 @@ public class PlayerMovement : MonoBehaviour
         }
         else if(verticalDir != 0)
         {
-            playerRB.velocity = new Vector2(0f, verticalDir * speed);
+            playerRB.linearVelocity = new Vector2(0f, verticalDir * speed);
             playerAnim.SetBool("IsMovement", true);
             playerAnim.SetFloat("Horizontal", horizontalDir);
             playerAnim.SetFloat("Vertical", verticalDir);
         }
         if(horizontalDir == 0 && verticalDir == 0)
         {
-            playerRB.velocity = Vector2.zero;
+            playerRB.linearVelocity = Vector2.zero;
             playerAnim.SetBool("IsMovement", false);
         }
     }
