@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         {
             maxEscapeValue = 15;
         }
-        Debug.Log(maxEscapeValue);
+        //Debug.Log(maxEscapeValue);
     }
 
 }

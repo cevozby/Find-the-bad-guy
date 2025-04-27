@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed;
+    [SerializeField] PlayerInput playerInput;
+    [SerializeField] Vector2 moveInput;
     float horizontalDir, verticalDir;
 
     public static bool gameOver;
@@ -10,6 +13,11 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D playerRB;
     Animator playerAnim;
     SpriteRenderer playerSR;
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        moveInput = context.ReadValue<Vector2>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -32,16 +40,13 @@ public class PlayerMovement : MonoBehaviour
 
     void CharacterMove()
     {
-        horizontalDir = Input.GetAxisRaw("Horizontal");
-        verticalDir = Input.GetAxisRaw("Vertical");
-
-        if(horizontalDir != 0)
+        if(moveInput.magnitude > 0)
         {
-            playerRB.linearVelocity = new Vector2(horizontalDir * speed, 0);
+            playerRB.linearVelocity = new Vector2(moveInput.x * speed, moveInput.y * speed);
             playerAnim.SetBool("IsMovement", true);
-            playerAnim.SetFloat("Horizontal", horizontalDir);
-            playerAnim.SetFloat("Vertical", verticalDir);
-            if (horizontalDir < 0)
+            playerAnim.SetFloat("Horizontal", moveInput.x);
+            playerAnim.SetFloat("Vertical", moveInput.y);
+            if (moveInput.x < 0)
             {
                 playerSR.flipX = true;
             }
@@ -50,18 +55,42 @@ public class PlayerMovement : MonoBehaviour
                 playerSR.flipX = false;
             }
         }
-        else if(verticalDir != 0)
-        {
-            playerRB.linearVelocity = new Vector2(0f, verticalDir * speed);
-            playerAnim.SetBool("IsMovement", true);
-            playerAnim.SetFloat("Horizontal", horizontalDir);
-            playerAnim.SetFloat("Vertical", verticalDir);
-        }
-        if(horizontalDir == 0 && verticalDir == 0)
+        else
         {
             playerRB.linearVelocity = Vector2.zero;
             playerAnim.SetBool("IsMovement", false);
         }
+
+        //horizontalDir = Input.GetAxisRaw("Horizontal");
+        //verticalDir = Input.GetAxisRaw("Vertical");
+
+        //if(horizontalDir != 0)
+        //{
+        //    playerRB.linearVelocity = new Vector2(horizontalDir * speed, 0);
+        //    playerAnim.SetBool("IsMovement", true);
+        //    playerAnim.SetFloat("Horizontal", horizontalDir);
+        //    playerAnim.SetFloat("Vertical", verticalDir);
+        //    if (horizontalDir < 0)
+        //    {
+        //        playerSR.flipX = true;
+        //    }
+        //    else
+        //    {
+        //        playerSR.flipX = false;
+        //    }
+        //}
+        //else if(verticalDir != 0)
+        //{
+        //    playerRB.linearVelocity = new Vector2(0f, verticalDir * speed);
+        //    playerAnim.SetBool("IsMovement", true);
+        //    playerAnim.SetFloat("Horizontal", horizontalDir);
+        //    playerAnim.SetFloat("Vertical", verticalDir);
+        //}
+        //if(horizontalDir == 0 && verticalDir == 0)
+        //{
+        //    playerRB.linearVelocity = Vector2.zero;
+        //    playerAnim.SetBool("IsMovement", false);
+        //}
     }
 
 }
