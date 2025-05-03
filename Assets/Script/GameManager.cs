@@ -20,6 +20,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] bool isOver;
 
     public static string level;
+    [SerializeField] private GameLevel gameLevel;
+    public GameLevel GameLevel
+    {
+        get { return gameLevel; }
+        set
+        {
+            gameLevel = value;
+        }
+    }
     // Start is called before the first frame update
     private void Awake()
     {
@@ -82,19 +91,39 @@ public class GameManager : MonoBehaviour
 
     void EscapeCalculate()
     {
-        if(level == "Easy")
+        switch(gameLevel)
         {
-            maxEscapeValue = 5;
+            case GameLevel.Easy:
+                maxEscapeValue = 5;
+                break;
+            case GameLevel.Medium:
+                maxEscapeValue = 10;
+                break;
+            case GameLevel.Hard:
+                maxEscapeValue = 15;
+                break;
         }
-        else if (level == "Medium")
-        {
-            maxEscapeValue = 10;
-        }
-        else if (level == "Hard")
-        {
-            maxEscapeValue = 15;
-        }
+
+        //if (level == "Easy")
+        //{
+        //    maxEscapeValue = 5;
+        //}
+        //else if (level == "Medium")
+        //{
+        //    maxEscapeValue = 10;
+        //}
+        //else if (level == "Hard")
+        //{
+        //    maxEscapeValue = 15;
+        //}
         //Debug.Log(maxEscapeValue);
     }
 
+}
+
+public enum GameLevel
+{
+    Easy,
+    Medium,
+    Hard
 }

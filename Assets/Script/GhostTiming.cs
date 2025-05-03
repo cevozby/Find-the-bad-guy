@@ -3,28 +3,26 @@ using UnityEngine.EventSystems;
 
 public class GhostTiming : MonoBehaviour,IPointerClickHandler
 {
+    [SerializeField] GhostType ghostType;
+
     Material _material;
     float alpha;
     Transform player;
     
     Flying fly;
-    AudioSource audio;
+    AudioSource ghostAudio;
     void Start()
     {
-        audio = GetComponent<AudioSource>();    
+        ghostAudio = GetComponent<AudioSource>();
         fly = GetComponent<Flying>();
-        _material = GetComponent<SpriteRenderer>().material;
-        alpha = _material.color.a;
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        
-
+        player = FindAnyObjectByType<PlayerMovement>().transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        alpha += Time.deltaTime * 0.05f;
-        _material.color = new Color(1,1,1, alpha);
+        alpha += Time.deltaTime * ghostType.regeneration;
+        _material.color = new Color(ghostType.ghostColor.r, ghostType.ghostColor.g, ghostType.ghostColor.b, alpha);
         if(alpha >= 1)
         {
             fly.enabled = true;
@@ -36,8 +34,8 @@ public class GhostTiming : MonoBehaviour,IPointerClickHandler
     }
     public void GetDamage()
     {
-        alpha -= 0.2f;
-        audio.Play();
+        alpha -= ghostType.damage;
+        ghostAudio.Play();
       
     }
     public void OnPointerClick(PointerEventData eventData)
@@ -49,5 +47,14 @@ public class GhostTiming : MonoBehaviour,IPointerClickHandler
         }
         Debug.Log("vurdueee");
 
+    }
+
+    public void SetGhost(GhostType ghostType)
+    {
+        this.ghostType = ghostType;
+        
+        _material = GetComponent<SpriteRenderer>().material;
+        _material.color = ghostType.ghostColor;
+        alpha = _material.color.a;
     }
 }
