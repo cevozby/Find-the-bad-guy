@@ -7,5 +7,5 @@ public class GhostType : ScriptableObject
     public Color ghostColor;
     public float damage;
     public float regeneration;
-
+    public int scrorePoint;
 }

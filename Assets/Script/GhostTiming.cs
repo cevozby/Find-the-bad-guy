@@ -32,9 +32,9 @@ public class GhostTiming : MonoBehaviour,IPointerClickHandler
             Points.souls--;
         }
     }
-    public void GetDamage()
+    public void GetDamage(float extraDamage)
     {
-        alpha -= ghostType.damage;
+        alpha -= (ghostType.damage + extraDamage);
         ghostAudio.Play();
       
     }
@@ -42,10 +42,8 @@ public class GhostTiming : MonoBehaviour,IPointerClickHandler
     {
         if (Vector2.Distance(transform.position, player.position) < 2)
         {
-            Debug.Log("vurdu");
-            GetDamage();
+            //GetDamage();
         }
-        Debug.Log("vurdueee");
 
     }
 
@@ -54,7 +52,7 @@ public class GhostTiming : MonoBehaviour,IPointerClickHandler
         this.ghostType = ghostType;
         
         _material = GetComponent<SpriteRenderer>().material;
-        _material.color = ghostType.ghostColor;
+        _material.color = new Color(ghostType.ghostColor.r, ghostType.ghostColor.g, ghostType.ghostColor.b, ghostType.ghostColor.a);
         alpha = _material.color.a;
     }
 }

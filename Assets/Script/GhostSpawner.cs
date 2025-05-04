@@ -23,8 +23,9 @@ public class GhostSpawner : MonoBehaviour
     void Spawn()
     {
         GameObject ghost = Instantiate(prefab, CalculateSpawnPos(), Quaternion.identity);
-        ghost.GetComponent<GhostTiming>().SetGhost(GetGhost());
-        Points.souls++;
+        GhostType ghostType = GetGhost();
+        ghost.GetComponent<GhostTiming>().SetGhost(ghostType);
+        Points.souls += ghostType.scrorePoint;
     }
     Vector2 CalculateSpawnPos()
     {
@@ -73,7 +74,7 @@ public class GhostSpawner : MonoBehaviour
                     ghost = ghosts[2];
                 break;
         }
-
+        Debug.Log(ghost.ghostName);
         return ghost;
     }
 }

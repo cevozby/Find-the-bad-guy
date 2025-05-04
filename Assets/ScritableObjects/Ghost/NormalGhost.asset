@@ -16,3 +16,4 @@ MonoBehaviour:
   ghostColor: {r: 1, g: 1, b: 1, a: 0.3529412}
   damage: 0.2
   regeneration: 0.05
+  scrorePoint: 1

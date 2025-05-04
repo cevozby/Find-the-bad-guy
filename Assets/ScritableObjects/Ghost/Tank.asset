@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132525b37d9254f4aad4adb533511b31, type: 3}
   m_Name: Tank
   m_EditorClassIdentifier: 
-  ghostName: Normal
-  ghostColor: {r: 1, g: 1, b: 1, a: 0.3529412}
+  ghostName: Tank
+  ghostColor: {r: 1, g: 0, b: 0, a: 0.3529412}
   damage: 0.1
   regeneration: 0.05
+  scrorePoint: 2

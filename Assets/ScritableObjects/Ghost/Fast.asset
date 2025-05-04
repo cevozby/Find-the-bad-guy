@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Fast
   m_EditorClassIdentifier: 
   ghostName: Fast
-  ghostColor: {r: 1, g: 1, b: 1, a: 0.3529412}
+  ghostColor: {r: 0, g: 1, b: 0.11084986, a: 0.3529412}
   damage: 0.2
   regeneration: 0.1
+  scrorePoint: 3

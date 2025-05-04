@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed;
+    [SerializeField] float speedMultiplier;
     [SerializeField] PlayerInput playerInput;
     [SerializeField] Vector2 moveInput;
     float horizontalDir, verticalDir;
@@ -42,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(moveInput.magnitude > 0)
         {
-            playerRB.linearVelocity = new Vector2(moveInput.x * speed, moveInput.y * speed);
+            playerRB.linearVelocity = new Vector2(moveInput.x, moveInput.y) * speed * speedMultiplier;
             playerAnim.SetBool("IsMovement", true);
             playerAnim.SetFloat("Horizontal", moveInput.x);
             playerAnim.SetFloat("Vertical", moveInput.y);
@@ -60,37 +62,18 @@ public class PlayerMovement : MonoBehaviour
             playerRB.linearVelocity = Vector2.zero;
             playerAnim.SetBool("IsMovement", false);
         }
+    }
 
-        //horizontalDir = Input.GetAxisRaw("Horizontal");
-        //verticalDir = Input.GetAxisRaw("Vertical");
+    public void ChangeSpeedMultiplier(float value, float time)
+    {
+        StartCoroutine(ChangeSpeed(value, time));
+    }
 
-        //if(horizontalDir != 0)
-        //{
-        //    playerRB.linearVelocity = new Vector2(horizontalDir * speed, 0);
-        //    playerAnim.SetBool("IsMovement", true);
-        //    playerAnim.SetFloat("Horizontal", horizontalDir);
-        //    playerAnim.SetFloat("Vertical", verticalDir);
-        //    if (horizontalDir < 0)
-        //    {
-        //        playerSR.flipX = true;
-        //    }
-        //    else
-        //    {
-        //        playerSR.flipX = false;
-        //    }
-        //}
-        //else if(verticalDir != 0)
-        //{
-        //    playerRB.linearVelocity = new Vector2(0f, verticalDir * speed);
-        //    playerAnim.SetBool("IsMovement", true);
-        //    playerAnim.SetFloat("Horizontal", horizontalDir);
-        //    playerAnim.SetFloat("Vertical", verticalDir);
-        //}
-        //if(horizontalDir == 0 && verticalDir == 0)
-        //{
-        //    playerRB.linearVelocity = Vector2.zero;
-        //    playerAnim.SetBool("IsMovement", false);
-        //}
+    IEnumerator ChangeSpeed(float value, float time)
+    {
+        speedMultiplier = value;
+        yield return new WaitForSeconds(time);
+        speedMultiplier = 1;
     }
 
 }
