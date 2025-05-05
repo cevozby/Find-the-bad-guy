@@ -284,6 +284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f142fe04da58d409957e320c7a63a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 0}
+  characterAttackControl: {fileID: 0}
 --- !u!114 &7226694887495230255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  speedMultiplier: 0
+  speedMultiplier: 1
   playerInput: {fileID: 3224495137272401646}
   moveInput: {x: 0, y: 0}
 --- !u!50 &7226694887495230259
