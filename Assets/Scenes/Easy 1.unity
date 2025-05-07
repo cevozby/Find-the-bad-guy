@@ -521,6 +521,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7226694887495230262, guid: ac7ad9c63db89b244bb6141447ff5d09, type: 3}
+      propertyPath: speed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7226694887495230263, guid: ac7ad9c63db89b244bb6141447ff5d09, type: 3}
       propertyPath: m_Name
       value: Hellhound
