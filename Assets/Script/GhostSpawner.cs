@@ -30,7 +30,7 @@ public class GhostSpawner : MonoBehaviour
     Vector2 CalculateSpawnPos()
     {
         int a = Random.Range(0, odalar.Length);
-        Vector2 v = Random.insideUnitCircle * .8f;
+        Vector2 v = Random.insideUnitCircle * 1f;
         return (Vector2)odalar[a].position + v;
     }
 

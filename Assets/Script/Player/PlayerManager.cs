@@ -5,26 +5,18 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] CharacterAttackControl characterAttackControl;
 
+    public void SetSpeed(float speed, float duration)
+    {
+        playerMovement.ChangeSpeedMultiplier(speed, duration);
+    }
+
+    public void SetExtraDamage(float extraDamage, float time)
+    {
+        characterAttackControl.SetExtraDamage(extraDamage, time);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Buff"))
-        {
-            //Buff buff = collision.GetComponent<Buff>();
-            //if (buff != null)
-            //{
-            //    switch (buff.BuffType)
-            //    {
-            //        case BuffType.Speed:
-            //            playerMovement.SetSpeed(buff.BuffValue);
-            //            break;
-            //        case BuffType.Attack:
-            //            characterAttackControl.SetExtraDamage(buff.BuffValue, buff.BuffDuration);
-            //            break;
-            //        default:
-            //            break;
-            //    }
-            //    Destroy(collision.gameObject);
-            //}
-        }
+        
     }
 }

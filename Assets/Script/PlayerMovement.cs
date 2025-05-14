@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator ChangeSpeed(float value, float time)
     {
+        Debug.Log("Speed Multiplier: " + value);
         speedMultiplier = value;
         yield return new WaitForSeconds(time);
         speedMultiplier = 1;

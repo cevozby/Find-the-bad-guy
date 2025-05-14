@@ -50,6 +50,7 @@ public class CharacterAttackControl : MonoBehaviour
 
     IEnumerator Attack(float extraDamage, float time)
     {
+        Debug.Log("Extra Damage: " + extraDamage);
         this.extraDamage = extraDamage;
         yield return new WaitForSeconds(time);
         this.extraDamage = 0f;

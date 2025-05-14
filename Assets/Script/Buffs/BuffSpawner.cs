@@ -33,6 +33,13 @@ public class BuffSpawner : MonoBehaviour
         Vector3 spawnPosition = lineRenderer.GetPosition(randomIndex) + Random.insideUnitSphere * spawnRadius;
         spawnPosition.z = 0; // Ensure the buff is spawned on the same plane as the line renderer
         GameObject buff = Instantiate(buffPrefab, spawnPosition, Quaternion.identity, parent);
+
+        BuffManager buffManager = buff.GetComponent<BuffManager>();
+        if (buffManager != null)
+        {
+            BuffSO randomBuff = buffs[Random.Range(0, buffs.Count)];
+            buffManager.SetBuff(randomBuff);
+        }
     }
 
 }
